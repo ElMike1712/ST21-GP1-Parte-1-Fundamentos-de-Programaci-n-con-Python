@@ -1437,7 +1437,7 @@ lifestore_products = [id_product, name, price, category, stock]
 
 # MIGUEL ANGEL SANTAMARIA VILCHIS
 # EMTECH - PROYECTO 01
-# Agosto 30, 2021
+# Septiembre 15, 2021
 
 
 #-------------------------------------------
@@ -1663,7 +1663,7 @@ def devolucionesDes(data):
 
 def crearBalance():
 
-    """En esta funcion se crea una tabla de Ingresos con las fechas y """
+    """En esta funcion se crea una tabla de Ingresos con las fechas y el precio por producto """
 
     print("-------------------------------------------")
     print("------------REPORTE DE VENTAS--------------")
@@ -1752,7 +1752,7 @@ def login():
     print("Bienvenid@ al Sistema")
     while True:
         user=validarString("Ingresa el usuario: ")
-        password=validarString("Ingresa la constraseña: ")
+        password=validarString("Ingresa la contraseña: ")
 
         if user!="usuario-administrador" or password!="Emtech2021#":    # Aqui se pueden editar las credenciales
             print("Usuario o contraseña invalidos")
@@ -1772,19 +1772,21 @@ def menu():
     print("0) Salir del sistema")
 
     while True:
-        op=validarInt("Introduzca una opcion: ")
+        op=validarInt("Introduzca una opcion: ")    # Solo acepta numeros enteros
         
         if op == 0:
             print("Logout")
             break
-        if op == 1:
+        elif op == 1:
             data=crearTablaMaestra()
             productosPorVentas(data)
-        if op == 2:
+        elif op == 2:
             data=crearTablaMaestra()
             productosPorReseña(data)
-        if op == 3:
+        elif op == 3:
             crearBalance()
+        else: 
+            print("Opción no válida")
 
 
 
